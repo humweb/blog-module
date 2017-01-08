@@ -2,7 +2,7 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Humweb\Core\Http\Controllers\Controller;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Humweb\Blog\Commands\DeletePost;

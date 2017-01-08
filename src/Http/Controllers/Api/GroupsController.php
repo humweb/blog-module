@@ -7,7 +7,7 @@ use Humweb\Blog\Models\Group;
 use Humweb\Blog\Commands\CreateGroup;
 use Humweb\Blog\Commands\DeleteGroup;
 use Humweb\Blog\Commands\UpdateGroup;
-use App\Http\Controllers\Controller;
+use Humweb\Core\Http\Controllers\Controller;
 use Humweb\Blog\Http\Traits\ApiResponse;
 use Illuminate\Http\Request;
 

@@ -2,7 +2,7 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use App\Http\Controllers\AdminController;
+use Humweb\Core\Http\Controllers\AdminController;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Humweb\Blog\Commands\CreatePost;

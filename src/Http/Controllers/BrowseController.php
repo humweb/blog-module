@@ -2,8 +2,8 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
+use Humweb\Core\Http\Controllers\Controller;
+use Humweb\Core\Http\Requests;
 use App\Humweb\Blog\Presenters\PostPresenter;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;

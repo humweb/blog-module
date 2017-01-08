@@ -1,6 +1,6 @@
 <?php namespace Humweb\Blog\Controllers;
 
-use App\Http\Controllers\Controller;
+use Humweb\Core\Http\Controllers\Controller;
 use Humweb\Blog\Models\Post;
 use Humweb\Blog\Repositories\PostRepository;
 

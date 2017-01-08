@@ -1,6 +1,6 @@
 <?php namespace Humweb\Blog\Controllers;
 
-use App\Http\Controllers\AdminController;
+use Humweb\Core\Http\Controllers\AdminController;
 use Humweb\Blog\Models\Post;
 use Humweb\Blog\Repositories\PostRepository;
 use Humweb\Blog\Requests\CreatePostRequest;

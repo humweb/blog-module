@@ -2,12 +2,12 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Humweb\Core\Http\Controllers\Controller;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use LGL\Core\Auth\Laravel\Facades\Sentinel;
 use Humweb\Blog\Models\Post;
 use Humweb\Blog\Models\Group;
-use App\Http\Requests;
+use Humweb\Core\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use LGL\Core\Support\Facades\Breadcrumbs;

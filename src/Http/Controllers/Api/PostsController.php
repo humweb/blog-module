@@ -2,7 +2,7 @@
 
 namespace Humweb\Blog\Http\Controllers\Api;
 
-use App\Http\Controllers\ApiController;
+use Humweb\Core\Http\Controllers\ApiController;
 use Humweb\Blog\Commands\CreatePost;
 use Humweb\Blog\Commands\DeletePost;
 use Humweb\Blog\Commands\UpdatePost;

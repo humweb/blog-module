@@ -2,7 +2,7 @@
 
 namespace Humweb\Blog\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use Humweb\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Humweb\Blog\Http\Traits\ApiResponse;
 use Humweb\Blog\Models\Group;
