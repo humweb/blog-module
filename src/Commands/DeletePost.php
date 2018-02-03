@@ -2,12 +2,12 @@
 
 namespace Humweb\Blog\Commands;
 
-use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\Request;
 use Humweb\Blog\Commands\Traits\PersistentCommand;
 use Humweb\Blog\Events\PostWasDeleted;
 use Humweb\Blog\Models\Post;
+use Illuminate\Contracts\Bus\SelfHandling;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\Request;
 
 /**
  * CreatePost
@@ -33,6 +33,7 @@ class DeletePost
 
     protected $id;
 
+
     /**
      * Construct data
      *
@@ -44,6 +45,7 @@ class DeletePost
         $this->data = $data;
         $this->id   = $id;
     }
+
 
     /**
      * Execute the command.

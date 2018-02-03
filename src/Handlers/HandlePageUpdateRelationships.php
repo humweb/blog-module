@@ -2,8 +2,8 @@
 
 namespace Humweb\Blog\Handlers;
 
-use Illuminate\Http\Request;
 use Humweb\Blog\Models\Post;
+use Illuminate\Http\Request;
 
 /**
  * HandlePostMediaUploads
@@ -36,8 +36,7 @@ class HandlePostUpdateRelationships
         $related = $this->request->get('related');
         if (count($related) && $posts = Post::select('id')->whereIn('id', $related)->get()) {
             $event->post->syncRelated(collect($posts));
-        }
-        else {
+        } else {
             $event->post->syncRelated([]);
         }
     }

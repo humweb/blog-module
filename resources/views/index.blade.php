@@ -1,7 +1,7 @@
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">Pages</div>
-        <div class="panel-body">
+    <div class="card card-default">
+        <div class="card-header">Pages</div>
+        <div class="card-body">
             <table class="table">
                 <thead>
                 <tr>
@@ -26,7 +26,7 @@
                         <td class="text-right">
                             <div class="btn-group">
                                 <a href="{{ route('get.admin.blog.posts.update', $post->id) }}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil"></i></a>
-                                <a href="{{ route('post.admin.blog.posts.remove', $post->id) }}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('get.admin.blog.posts.delete', $post->id) }}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
                             </div>
                         </td>
                     </tr>

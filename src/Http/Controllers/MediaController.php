@@ -2,12 +2,10 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
+use Humweb\Blog\Commands\DeletePostMedia;
 use Humweb\Core\Http\Controllers\Controller;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
-use Humweb\Blog\Commands\DeletePost;
-use Humweb\Blog\Commands\DeletePostMedia;
-use Humweb\Blog\Commands\UpdatePost;
 
 class MediaController extends Controller
 {

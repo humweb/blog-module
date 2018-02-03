@@ -2,8 +2,8 @@
 
 namespace Humweb\Blog\Events;
 
-use Illuminate\Queue\SerializesModels;
 use Humweb\Blog\Models\Post;
+use Illuminate\Queue\SerializesModels;
 
 /**
  * PostWasCreated
@@ -26,5 +26,5 @@ class PostWasUpdated
     {
         $this->post = $post;
     }
-    
+
 }

@@ -2,7 +2,6 @@
 
 $this->group(['prefix' => 'help', 'middleware' => ['auth']], function () {
 
-
     $this->get('groups/create', [
         'as'   => 'get.help.groups.create',
         'uses' => 'GroupsController@getCreate'
@@ -38,8 +37,6 @@ $this->group(['prefix' => 'help', 'middleware' => ['auth']], function () {
         'uses' => 'HomeController@getIndex'
     ]);
 
-
-
     $this->group(['prefix' => 'api'], function () {
 
         $this->get('groups/{id}', [
@@ -70,7 +67,6 @@ $this->group(['prefix' => 'help', 'middleware' => ['auth']], function () {
             'as'   => 'post.api.help.groups.delete',
             'uses' => 'Api\GroupsController@postRemove'
         ]);
-
     });
 });
 

@@ -2,13 +2,12 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
+use Humweb\Blog\Models\Group;
+use Humweb\Blog\Models\Post;
 use Humweb\Core\Http\Controllers\Controller;
 use Humweb\Core\Http\Requests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-use Humweb\Blog\Models\Group;
-use Humweb\Blog\Models\Post;
 use LGL\Core\Support\Facades\Menu;
 
 class BaseContentController extends Controller
@@ -22,7 +21,6 @@ class BaseContentController extends Controller
     {
         parent::__construct();
     }
-
 
 
     protected function loadMenu()

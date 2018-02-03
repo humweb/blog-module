@@ -76,7 +76,6 @@ $this->group(['prefix' => 'api/blog'], function () {
  */
 $this->group(['prefix' => 'api/blog', 'middleware' => ['auth']], function () {
 
-
     $this->match(['post', 'put'], 'posts/{id}', [
         'as'   => 'post.api.blog.posts.update',
         'uses' => 'Api\PostsController@postUpdate',

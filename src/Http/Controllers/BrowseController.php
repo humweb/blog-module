@@ -2,14 +2,12 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use Humweb\Core\Http\Controllers\Controller;
-use Humweb\Core\Http\Requests;
 use App\Humweb\Blog\Presenters\PostPresenter;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 use Humweb\Blog\Models\Group;
 use Humweb\Blog\Models\Post;
+use Humweb\Core\Http\Requests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Http\Request;
 use LGL\Core\Support\Facades\Menu;
 
 class BrowseController extends BaseContentController
@@ -17,6 +15,7 @@ class BrowseController extends BaseContentController
     use DispatchesJobs;
 
     protected $layout = 'content.layouts.default';
+
 
     public function __construct()
     {
@@ -40,13 +39,14 @@ class BrowseController extends BaseContentController
         return $this->setContent('content.index', $data);
     }
 
+
     public function getPost(Request $request, $postId)
     {
         $whereField = is_numeric($postId) ? 'id' : 'slug';
         $post       = Post::with('group', 'tagged', 'media')->where($whereField, $postId)->first();
 
         $mediaPresenter = new PostPresenter($post);
-        $post->media = $mediaPresenter->present();
+        $post->media    = $mediaPresenter->present();
 
         $this->viewShare('posts', $post);
 
@@ -57,6 +57,5 @@ class BrowseController extends BaseContentController
 
         return $this->setContent('content.index', $this->data);
     }
-    
 
 }

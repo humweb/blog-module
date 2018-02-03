@@ -1,10 +1,10 @@
 <?php namespace Humweb\Blog\Controllers;
 
-use Humweb\Core\Http\Controllers\AdminController;
 use Humweb\Blog\Models\Post;
 use Humweb\Blog\Repositories\PostRepository;
 use Humweb\Blog\Requests\CreatePostRequest;
 use Humweb\Blog\Requests\UpdatePostRequest;
+use Humweb\Core\Http\Controllers\AdminController;
 use Illuminate\Session\SessionManager;
 
 class AdminPostController extends AdminController

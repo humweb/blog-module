@@ -8,6 +8,7 @@ class PostClearCache
 {
     protected $cache;
 
+
     /**
      * ComponentClearCache constructor.
      *
@@ -17,6 +18,7 @@ class PostClearCache
     {
         $this->cache = $cache;
     }
+
 
     /**
      * Handle the event.

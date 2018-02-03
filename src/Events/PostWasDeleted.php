@@ -11,6 +11,7 @@ class PostWasDeleted
 
     public $post;
 
+
     /**
      * Create a new event instance.
      *

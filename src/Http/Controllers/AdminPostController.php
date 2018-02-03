@@ -2,13 +2,12 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use Humweb\Core\Http\Controllers\AdminController;
 use Humweb\Blog\Commands\CreatePost;
 use Humweb\Blog\Commands\DeletePost;
 use Humweb\Blog\Commands\UpdatePost;
 use Humweb\Blog\Models\Post;
 use Humweb\Blog\Requests\UpdatePostRequest;
-
+use Humweb\Core\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 
 class AdminPostController extends AdminController
@@ -41,7 +40,7 @@ class AdminPostController extends AdminController
         return $this->setContent('blog::forms.posts.create', [
             'posts'          => $post,
             'available_tags' => [],
-//            'available_tags' => Tag::pluck('name', 'name'),
+            //            'available_tags' => Tag::pluck('name', 'name'),
             'selected_tags'  => [],
             //'available_posts' => $post->getRelatedAttribute()->lists('name', 'id')->all(),
             'selected_posts' => [],
@@ -84,7 +83,7 @@ class AdminPostController extends AdminController
         return $this->setContent('blog::forms.posts.update', [
             'post'           => $post,
             'available_tags' => [],
-//            'available_tags' => Tag::pluck('name', 'name'),
+            //            'available_tags' => Tag::pluck('name', 'name'),
             'selected_tags'  => $post->tagged->pluck('name', 'name')->all(),
             //            'available_posts' => $post->getRelatedAttribute()->lists('name', 'id')->all(),
             //            'selected_posts'  => $related->lists('id')->all(),

@@ -1,38 +1,37 @@
 <?php
 
-
 Route::get('posts', [
-    'as' => 'get.blog.posts',
-    'uses' => 'PostController@getIndex'
+    'as'   => 'get.admin.blog.posts',
+    'uses' => 'PostsController@getIndex'
 ]);
 
 Route::get('posts/show/{id}', [
-    'as' => 'get.blog.posts.single',
-    'uses' => 'PostController@getPost'
+    'as'   => 'get.blog.posts.single',
+    'uses' => 'PostsController@getPost'
 ]);
 
 Route::get('posts/create', [
-    'as' => 'get.blog.posts.create',
+    'as'   => 'get.admin.blog.posts.create',
     'uses' => 'AdminPostController@getCreate'
 ]);
 
 Route::post('posts/create', [
-    'as' => 'post.blog.posts.create',
+    'as'   => 'post.admin.blog.posts.create',
     'uses' => 'AdminPostController@postCreate'
 ]);
 
 // Post : Update
 Route::get('posts/update/{id}', [
-    'as' => 'get.blog.posts.update',
-    'uses' => 'PostController@getUpdate'
+    'as'   => 'get.admin.blog.posts.update',
+    'uses' => 'PostsController@getUpdate'
 ]);
 Route::post('posts/update/{id}', [
-    'as' => 'post.blog.posts.update',
+    'as'   => 'post.admin.blog.posts.update',
     'uses' => 'AdminPostController@postUpdate'
 ]);
 
 //Delete
-Route::get('posts/delete/{id}', [
-    'as' => 'get.blog.posts.delete',
+Route::any('posts/delete/{id}', [
+    'as'   => 'get.admin.blog.posts.delete',
     'uses' => 'AdminPostController@getDelete'
 ]);

@@ -1,6 +1,5 @@
 <?php namespace Humweb\Blog\Models;
 
-use Humweb\Comments\Models\CommentableTrait;
 use Humweb\Core\Data\Traits\HasRelatedContent;
 use Humweb\Core\Data\Traits\SluggableTrait;
 use Humweb\Tags\Models\TaggableTrait;
@@ -13,16 +12,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
-    use TaggableTrait, CommentableTrait, HasRelatedContent, SluggableTrait;
+    use TaggableTrait, HasRelatedContent, SluggableTrait;
 
     /**
      * Table name.
      *
      * @var string
      */
-    protected $table      = 'posts';
-
-
+    protected $table = 'posts';
 
     protected $fillable = [
         'title',
@@ -42,6 +39,7 @@ class Post extends Model
         3 => 'Disabled',
     ];
 
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -54,6 +52,7 @@ class Post extends Model
         ];
     }
 
+
     /**
      * Scope a query to only include active posts
      *
@@ -63,6 +62,7 @@ class Post extends Model
     {
         return $query->where('active', 1);
     }
+
 
     public function statusText()
     {

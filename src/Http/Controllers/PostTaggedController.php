@@ -2,9 +2,8 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use Humweb\Core\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Humweb\Blog\Models\Post;
+use Illuminate\Http\Request;
 
 class PostTaggedController extends BaseContentController
 {
@@ -18,6 +17,7 @@ class PostTaggedController extends BaseContentController
         $this->loadMenu();
     }
 
+
     /**
      * @param \Illuminate\Http\Request $request
      *
@@ -27,9 +27,8 @@ class PostTaggedController extends BaseContentController
     {
         $posts = [];
 
-            $tags = str_contains($tag, ',') ? explode(',', $tag) : [$tag];
-            $posts = Post::withAnyTag($tags)->with('group')->get();
-
+        $tags  = str_contains($tag, ',') ? explode(',', $tag) : [$tag];
+        $posts = Post::withAnyTag($tags)->with('group')->get();
 
         return $this->setContent('content.posts.tagged', ['posts' => $posts, 'tags' => $tags]);
     }

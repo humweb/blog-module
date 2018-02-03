@@ -2,8 +2,8 @@
 
 namespace Humweb\Blog;
 
-use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
+use Illuminate\Routing\Router;
 
 class BlogRouteServiceProvider extends RouteServiceProvider
 {
@@ -25,7 +25,7 @@ class BlogRouteServiceProvider extends RouteServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace, 'middleware' => 'web'], function ($router) {
-            require base_path('Humweb/Blog/Http/Routes/posts.php');
+            require __DIR__.'/routes.php';
         });
     }
 }

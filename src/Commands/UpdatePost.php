@@ -23,8 +23,8 @@ class UpdatePost
      * @var string[]
      */
     public $rules = [
-        'title' => '',
-        'slug' => '',
+        'title'        => '',
+        'slug'         => '',
         'content_html' => '',
     ];
 

@@ -2,15 +2,16 @@
 
 namespace Humweb\Blog\Http\Controllers\Api;
 
-use Humweb\Core\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Humweb\Blog\Http\Traits\ApiResponse;
 use Humweb\Blog\Models\Group;
 use Humweb\Blog\Models\Post;
+use Humweb\Core\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     use ApiResponse;
+
 
     /**
      * @param \Illuminate\Http\Request $request

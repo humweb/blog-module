@@ -57,17 +57,6 @@ trait PersistentCommand
 
 
     /**
-     * Get data.
-     *
-     * @return \Illuminate\Http\Request
-     */
-    protected function data()
-    {
-        return $this->data;
-    }
-
-
-    /**
      * Filter the command data.
      *
      * @param null|array $data
@@ -81,6 +70,17 @@ trait PersistentCommand
         return array_filter($data, function ($val) {
             return $val !== null;
         });
+    }
+
+
+    /**
+     * Get data.
+     *
+     * @return \Illuminate\Http\Request
+     */
+    protected function data()
+    {
+        return $this->data;
     }
 
 }

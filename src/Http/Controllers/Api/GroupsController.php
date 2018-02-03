@@ -2,18 +2,19 @@
 
 namespace Humweb\Blog\Http\Controllers\Api;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Humweb\Blog\Models\Group;
 use Humweb\Blog\Commands\CreateGroup;
 use Humweb\Blog\Commands\DeleteGroup;
 use Humweb\Blog\Commands\UpdateGroup;
-use Humweb\Core\Http\Controllers\Controller;
 use Humweb\Blog\Http\Traits\ApiResponse;
+use Humweb\Blog\Models\Group;
+use Humweb\Core\Http\Controllers\Controller;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 
 class GroupsController extends Controller
 {
     use ApiResponse, DispatchesJobs;
+
 
     /**
      * @return array
@@ -22,6 +23,7 @@ class GroupsController extends Controller
     {
         return $this->responseSuccess(['groups' => Group::all()]);
     }
+
 
     /**
      * @param $id
@@ -32,6 +34,7 @@ class GroupsController extends Controller
     {
         return $this->responseSuccess(['group' => Group::find($id)]);
     }
+
 
     /**
      * @param \Illuminate\Http\Request $request
@@ -44,6 +47,7 @@ class GroupsController extends Controller
 
         return $this->responseCreated(['group' => $group], 'group created.');
     }
+
 
     /**
      * @param $id
@@ -61,12 +65,14 @@ class GroupsController extends Controller
         return $this->responseSuccess([], 'group removed.');
     }
 
+
     public function postUpdate(Request $request, $id)
     {
         $group = $this->dispatch(new UpdateGroup($request, $id));
 
         return $this->responseSuccess(['group' => $group], 'group updated.');
     }
+
 
     /**
      * @param \Illuminate\Http\Request $request

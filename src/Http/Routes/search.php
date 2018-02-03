@@ -1,6 +1,5 @@
 <?php
 
-
 $this->group(['prefix' => 'api/help/search', 'middleware' => ['auth']], function () {
 
     $this->get('groups', [
@@ -11,5 +10,4 @@ $this->group(['prefix' => 'api/help/search', 'middleware' => ['auth']], function
         'as'   => 'get.api.search.posts',
         'uses' => 'Api\SearchController@getPosts'
     ]);
-
 });

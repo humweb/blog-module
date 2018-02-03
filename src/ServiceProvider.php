@@ -38,6 +38,7 @@ class ServiceProvider extends ModuleBaseProvider
         ],
     ];
 
+
     /**
      * Bootstrap the application events.
      */
@@ -46,6 +47,7 @@ class ServiceProvider extends ModuleBaseProvider
         $this->app['modules']->put('blog', $this);
         $this->loadViews();
     }
+
 
     /**
      * Register any application services.
@@ -58,8 +60,8 @@ class ServiceProvider extends ModuleBaseProvider
      */
     public function register()
     {
-
     }
+
 
     public function getAdminMenu()
     {
@@ -68,7 +70,7 @@ class ServiceProvider extends ModuleBaseProvider
                 [
                     'label'    => 'Posts',
                     'url'      => route('get.admin.blog.posts'),
-                    'icon'     => '<i class="fa fa-book" ></i>',
+                    'icon'     => '<i class="fa fa-book"></i>',
                     'children' => [
                         ['label' => 'List', 'url' => route('get.admin.blog.posts')],
                         ['label' => 'Create', 'url' => route('get.admin.blog.posts.create')],

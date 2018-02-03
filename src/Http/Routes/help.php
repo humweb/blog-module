@@ -1,6 +1,5 @@
 <?php
 
-
 $this->group(['prefix' => 'blog', 'middleware' => ['auth']], function () {
 
     $this->get('/', [
@@ -17,5 +16,4 @@ $this->group(['prefix' => 'blog', 'middleware' => ['auth']], function () {
         'as'   => 'get.help.post',
         'uses' => 'BrowseController@getPost'
     ]);
-
 });

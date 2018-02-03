@@ -2,18 +2,19 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use Humweb\Core\Http\Controllers\Controller;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Humweb\Blog\Models\Group;
-use Illuminate\Http\Request;
 use Humweb\Blog\Commands\CreateGroup;
 use Humweb\Blog\Commands\DeleteGroup;
 use Humweb\Blog\Commands\UpdateGroup;
+use Humweb\Blog\Models\Group;
+use Humweb\Core\Http\Controllers\Controller;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Http\Request;
 
 class GroupsController extends Controller
 {
     use DispatchesJobs;
-    
+
+
     /**
      * Index post
      *

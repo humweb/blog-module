@@ -2,13 +2,13 @@
 
 namespace Humweb\Blog\Http\Controllers;
 
-use Humweb\Core\Http\Controllers\AdminController;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
 use Humweb\Blog\Commands\CreatePost;
 use Humweb\Blog\Commands\DeletePost;
 use Humweb\Blog\Commands\UpdatePost;
 use Humweb\Blog\Models\Post;
+use Humweb\Core\Http\Controllers\AdminController;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Http\Request;
 
 class PostsController extends AdminController
 {
@@ -23,11 +23,12 @@ class PostsController extends AdminController
     public function getIndex()
     {
         $data = [
-            'posts'    => Post::orderBy('updated_at', 'desc')->get()
+            'posts' => Post::orderBy('updated_at', 'desc')->get()
         ];
 
         return $this->setContent('blog::index', $data);
     }
+
 
     /**
      * Single post post
@@ -57,7 +58,7 @@ class PostsController extends AdminController
         $post = new Post;
 
         return view('content.posts.form', [
-            'posts'            => $post,
+            'posts'           => $post,
             'available_tags'  => $post->existingTags()->lists('name', 'name'),
             'selected_tags'   => [],
             'available_posts' => $post->getRelatedAttribute()->lists('name', 'id')->all(),
@@ -97,28 +98,28 @@ class PostsController extends AdminController
         $organizedFiles = [];
 
         $post  = Post::find($id);
-        $files = $post->getMedia();
+        //        $files = $post->getMedia();
         //        dd($files);
-        $groups = [0 => 'Select group'] + Group::orderBy('position')->lists('name', 'id')->all();
+        //        $groups = [0 => 'Select group'] + Group::orderBy('position')->lists('name', 'id')->all();
 
         // Group files by collections
-        foreach ($files as $file) {
-            if ( ! isset($organizedFiles[$file->collection_name])) {
-                $organizedFiles[$file->collection_name] = [];
-            }
-            $organizedFiles[$file->collection_name][] = $file;
-        }
-        $related = $post->getRelatedAttribute();
+        //        foreach ($files as $file) {
+        //            if ( ! isset($organizedFiles[$file->collection_name])) {
+        //                $organizedFiles[$file->collection_name] = [];
+        //            }
+        //            $organizedFiles[$file->collection_name][] = $file;
+        //        }
+        //        $related = $post->getRelatedAttribute();
 
-        return view('content.posts.form', [
-            'posts'            => $post,
-            'available_tags'  => $post->existingTags()->lists('name', 'name'),
-            'selected_tags'   => $post->tags->lists('name', 'name')->all(),
-            'available_posts' => $post->getRelatedAttribute()->lists('name', 'id')->all(),
-            'selected_posts'  => $related->lists('id')->all(),
-            'groups'          => $groups,
-            'files'           => $files,
-            'organizedFiles'  => $organizedFiles,
+        return $this->setContent('blog::forms.posts.update', [
+            'post'            => $post,
+            //            'available_tags'  => $post->existingTags()->lists('name', 'name'),
+            //            'selected_tags'   => $post->tags->lists('name', 'name')->all(),
+            //            'available_posts' => $post->getRelatedAttribute()->lists('name', 'id')->all(),
+            //            'selected_posts'  => $related->lists('id')->all(),
+            //            'groups'          => $groups,
+            //            'files'           => $files,
+            //            'organizedFiles'  => $organizedFiles,
             'formTypeLabel'   => 'Update'
         ]);
     }

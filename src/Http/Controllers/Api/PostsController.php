@@ -2,12 +2,12 @@
 
 namespace Humweb\Blog\Http\Controllers\Api;
 
-use Humweb\Core\Http\Controllers\ApiController;
 use Humweb\Blog\Commands\CreatePost;
 use Humweb\Blog\Commands\DeletePost;
 use Humweb\Blog\Commands\UpdatePost;
 use Humweb\Blog\Events\PostWasUpdated;
 use Humweb\Blog\Models\Post;
+use Humweb\Core\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
