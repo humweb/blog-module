@@ -63,20 +63,20 @@ class ServiceProvider extends ModuleBaseProvider
     }
 
 
-    public function getAdminMenu()
-    {
-        return [
-            'Content' => [
-                [
-                    'label'    => 'Posts',
-                    'url'      => route('get.admin.blog.posts'),
-                    'icon'     => '<i class="fa fa-book"></i>',
-                    'children' => [
-                        ['label' => 'List', 'url' => route('get.admin.blog.posts')],
-                        ['label' => 'Create', 'url' => route('get.admin.blog.posts.create')],
-                    ],
-                ],
-            ],
-        ];
-    }
+    //    public function getAdminMenu()
+    //    {
+    //        return [
+    //            'Content' => [
+    //                [
+    //                    'label'    => 'Posts',
+    //                    'url'      => route('get.admin.blog.posts'),
+    //                    'icon'     => '<i class="fa fa-book"></i>',
+    //                    'children' => [
+    //                        ['label' => 'List', 'url' => route('get.admin.blog.posts')],
+    //                        ['label' => 'Create', 'url' => route('get.admin.blog.posts.create')],
+    //                    ],
+    //                ],
+    //            ],
+    //        ];
+    //    }
 }

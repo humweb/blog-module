@@ -19,22 +19,29 @@ class Post extends Model
      *
      * @var string
      */
-    protected $table = 'posts';
+    protected $table = 'blog_posts';
 
     protected $fillable = [
         'title',
         'slug',
-        'content_html',
+        'content',
         'status',
+        'featured',
         'category_id',
         'created_by',
-        'meta_title',
-        'meta_description',
         'published_at'
     ];
 
+    protected $dates = [
+        'published_at'
+    ];
+
+    protected $casts = [
+        'featured' => 'boolean'
+    ];
+
     protected $statusList = [
-        1 => 'Enabled',
+        1 => 'Published',
         2 => 'Draft',
         3 => 'Disabled',
     ];
@@ -60,7 +67,7 @@ class Post extends Model
      */
     public function scopeActive($query)
     {
-        return $query->where('active', 1);
+        return $query->where('status', 1);
     }
 
 

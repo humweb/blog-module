@@ -16,9 +16,11 @@ class AdminPostController extends AdminController
     /**
      * Post index post
      *
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\View\View
      */
-    public function getIndex()
+    public function getIndex(Request $request)
     {
         $data = [
             'posts' => Post::orderBy('updated_at', 'desc')->get()

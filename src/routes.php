@@ -1,4 +1,15 @@
 <?php
+$this->group(['prefix' => 'blog'], function () {
+    $this->get('/', [
+        'as'   => 'get.blog.posts',
+        'uses' => 'PostsController@getIndex',
+    ]);
+
+    $this->get('post/{id}', [
+        'as'   => 'get.blog.posts.single',
+        'uses' => 'PostsController@getOne',
+    ]);
+});
 
 Route::get('posts', [
     'as'   => 'get.admin.blog.posts',

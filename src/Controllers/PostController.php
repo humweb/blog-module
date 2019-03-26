@@ -3,6 +3,7 @@
 use Humweb\Blog\Models\Post;
 use Humweb\Blog\Repositories\PostRepository;
 use Humweb\Core\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -10,7 +11,7 @@ class PostController extends Controller
     protected $layout = 'layouts.default';
 
 
-    public function getIndex()
+    public function getIndex(Request $request)
     {
         $this->setTitle('Blog Posts');
         $this->crumb('Home', '/')->crumb('Posts');

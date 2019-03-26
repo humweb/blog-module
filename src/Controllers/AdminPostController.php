@@ -5,6 +5,7 @@ use Humweb\Blog\Repositories\PostRepository;
 use Humweb\Blog\Requests\CreatePostRequest;
 use Humweb\Blog\Requests\UpdatePostRequest;
 use Humweb\Core\Http\Controllers\AdminController;
+use Illuminate\Http\Request;
 use Illuminate\Session\SessionManager;
 
 class AdminPostController extends AdminController
@@ -13,7 +14,7 @@ class AdminPostController extends AdminController
     protected $layout = 'layouts.admin';
 
 
-    public function getIndex()
+    public function getIndex(Request $request)
     {
         $this->setTitle('Blog Posts');
         $this->crumb('Home', '/')->crumb('Posts');
