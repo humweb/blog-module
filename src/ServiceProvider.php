@@ -46,37 +46,24 @@ class ServiceProvider extends ModuleBaseProvider
     {
         $this->app['modules']->put('blog', $this);
         $this->loadViews();
+        $this->loadMigrations();
     }
 
 
-    /**
-     * Register any application services.
-     *
-     * This service provider is a great spot to register your various container
-     * bindings with the application. As you can see, we are registering our
-     * "Registrar" implementation here. You can add your own bindings too!
-     *
-     * @return void
-     */
-    public function register()
+    public function getAdminMenu()
     {
+        return [
+            'Content' => [
+                [
+                    'label'    => 'Posts',
+                    'url'      => route('get.admin.blog.posts'),
+                    'icon'     => '<i class="fa fa-book"></i>',
+                    'children' => [
+                        ['label' => 'List', 'url' => route('get.admin.blog.posts')],
+                        ['label' => 'Create', 'url' => route('get.admin.blog.posts.create')],
+                    ],
+                ],
+            ],
+        ];
     }
-
-
-    //    public function getAdminMenu()
-    //    {
-    //        return [
-    //            'Content' => [
-    //                [
-    //                    'label'    => 'Posts',
-    //                    'url'      => route('get.admin.blog.posts'),
-    //                    'icon'     => '<i class="fa fa-book"></i>',
-    //                    'children' => [
-    //                        ['label' => 'List', 'url' => route('get.admin.blog.posts')],
-    //                        ['label' => 'Create', 'url' => route('get.admin.blog.posts.create')],
-    //                    ],
-    //                ],
-    //            ],
-    //        ];
-    //    }
 }
